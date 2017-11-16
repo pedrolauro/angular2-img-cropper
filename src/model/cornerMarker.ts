@@ -1,5 +1,5 @@
-import {Handle, IHandle} from './handle';
-import {CropperSettings} from '../cropperSettings';
+import { Handle, IHandle } from './handle';
+import { CropperSettings } from '../cropperSettings';
 
 export interface ICornerMarker extends IHandle {
     horizontalNeighbour: CornerMarker;
@@ -58,7 +58,7 @@ export class CornerMarker extends Handle implements ICornerMarker {
         ctx.lineTo(this.position.x + this.offset.x, this.position.y + this.offset.y);
         ctx.closePath();
         ctx.lineWidth = this.cropperSettings.cropperDrawSettings.strokeWidth;
-        ctx.strokeStyle = this.cropperSettings.cropperDrawSettings.strokeColor || 'rgba(255,255,255,.7)';
+        ctx.strokeStyle = this.cropperSettings.cropperDrawSettings.strokeColor ||  'rgba(255,255,255,.7)';
         ctx.stroke();
     }
 
@@ -76,7 +76,6 @@ export class CornerMarker extends Handle implements ICornerMarker {
             vDirection = -this.cropperSettings.markerSizeMultiplier;
         }
 
-        }
         ctx.beginPath();
         if (this.cropperSettings.cropperDrawSettings.lineDash) {
             ctx.setLineDash([1, 3]);
@@ -88,7 +87,7 @@ export class CornerMarker extends Handle implements ICornerMarker {
         ctx.lineTo(this.position.x + this.offset.x, this.position.y + this.offset.y + (sideLength * vDirection));
         ctx.lineTo(this.position.x + this.offset.x, this.position.y + this.offset.y);
         ctx.closePath();
-        ctx.fillStyle = this.cropperSettings.cropperDrawSettings.strokeColor || 'rgba(255,255,255,.7)';
+        ctx.fillStyle = this.cropperSettings.cropperDrawSettings.strokeColor ||  'rgba(255,255,255,.7)';
         ctx.fill();
     }
 

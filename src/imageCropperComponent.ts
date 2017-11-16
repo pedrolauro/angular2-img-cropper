@@ -48,6 +48,16 @@ export class ImageCropperComponent implements AfterViewInit, OnChanges, OnDestro
         this.renderer = renderer;
     }
 
+    public setCroppedSizes(croppedWidth:number, croppedHeight:number) {
+    
+        const canvas:HTMLCanvasElement = this.cropcanvas.nativeElement;
+        const ctx = canvas.getContext('2d');
+        
+        this.cropper.setCropSizes(croppedWidth, croppedHeight);
+        this.cropper.prepare(canvas);
+        this.cropper.draw(ctx);
+    }
+
     public ngAfterViewInit():void {
         let canvas:HTMLCanvasElement = this.cropcanvas.nativeElement;
 

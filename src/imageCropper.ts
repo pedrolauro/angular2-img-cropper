@@ -85,6 +85,11 @@ export class ImageCropper extends ImageCropperModel {
         this.cropHeight = croppedHeight;
     }
 
+    public setCropSizes(cropWidth:number, cropHeight:number) {
+        this.cropWidth = cropWidth;
+        this.cropHeight = cropHeight;
+    }
+
     private static sign(x:number):number {
         if (+x === x) {
             return (x === 0) ? x : (x > 0) ? 1 : -1;
